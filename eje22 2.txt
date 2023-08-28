@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mostrar Mensaje al Clickear un Botón</title>
+</head>
+<body>
+
+<!-- <button id="miBoton">Clic aquí</button> -->
+<input type="button" value="Dame un click" onclick="alert('Hola! acabas de tocar un boton?... Morty, trae la pala');" />
+<!-- <script>
+// Obtener una referencia al botón por su ID
+var boton = document.getElementById("miBoton");
+
+// Agregar un event listener para el clic en el botón
+boton.addEventListener("click", function() {
+  // Mostrar el mensaje al hacer clic
+  alert("Hola! acabas de tocar un boton?... Morty, trae la pala");
+});
+</script> -->
+
+</body>
+</html>
+
+
+
+/* document.getElementById("boton").onclick = mostrarValor;
+
+function mostrarValor(){
+
+  let radio = document.getElementById("radio").value;
+  let area = Math.round(Math.PI * (radio) **2);
+  let perimetro = Math.round(2 * Math.PI * radio);
+
+  console.log(area);
+  console.log(perimetro);
+
+  document.getElementById("perimetro").innerHTML = `El Perimetro es: ${perimetro}`;
+  document.getElementById("area").innerHTML = `El Area es: ${area}`;
+
+} */
+<form>
+        <label for="radio">Ingrese el radio</label>
+        <input type="number" id="radio">
+        <button id="boton" type="button" onclick="mostrarValor()">Calcular</button>
+    </form>
+    <div>
+        <h5>Resultado</h5>
+        <p id="perimetro"></p>
+        <p id="area"></p>
+    </div>
+Paula Viggiano  to  Everyone 8:46 PM
+/* 23. Resalte todas las palabras de más de 8 caracteres en el texto del párrafo (con un fondo amarillo, por ejemplo) */
+
+  const nuevoTexto = document.getElementById("parrafo");
+var arr = nuevoTexto.innerText.split(" ");  
+//Este funciona con nuevoTexto.innerHtml 
+
+// o tambien se puede hacer 
+/*const nuevoTexto = document.getElementById("parrafo").innerHTML;
+var arr = nuevoTexto.split(" "); */
+//funciona con document.get....
+
+function pintar() {
+  
+  for (let index = 0; index < arr.length; index++) {
+    if (arr[index].length == 8) {
+      arr[index] = '<span class="resaltado">' + arr[index] + '</span>';
+    }
+
+    console.log(arr[index]);
+   
+  }
+
+  nuevoTexto.innerHTML = arr.join(' ');
+  //document.getElementById("parrafo").innerHTML = arr.join(' ');
+}
+<div>
+        <h3 id="mensaje">Dale click al boton!</h3>
+        <button type="button" id="boton" onclick="pintar()">Hace click</button>
+        <p id="texto"></p>
+    </div>
+<p id="parrafo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit id ex, autem at sunt recusandae maiores reiciendis aperiam officia, tempora aliquid nemo qui perferendis nam nulla deleniti deserunt blanditiis sequi.
+    Assumenda unde voluptas, nam, quibusdam dolor atque fugit dolorum ipsam veniam quae voluptatem iste consectetur quas sapiente, rerum modi officia eum ullam. Numquam, consectetur aspernatur! Facere animi beatae aliquam repellat.
+    </p>
+
+    <span style="background-color: yellow;"></span>
+    <style>
+        .resaltado{background-color: yellow;}
+    </style>
